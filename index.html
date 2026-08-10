@@ -144,7 +144,10 @@ section{padding:80px 24px;}
 .inspectors-section .section-sub{color:rgba(255,255,255,0.7);}
 .inspectors-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;max-width:700px;}
 .inspector-card{background:rgba(255,255,255,0.07);border:1.5px solid rgba(245,168,0,0.25);border-radius:16px;padding:32px;text-align:center;}
-.inspector-avatar{width:80px;height:80px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:28px;color:var(--navy-dark);margin:0 auto 16px;}
+.inspector-avatar{width:160px;height:160px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:28px;color:var(--navy-dark);margin:0 auto 16px;overflow:hidden;border:4px solid rgba(255,255,255,0.2);}
+.inspector-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.contact-mini-avatar{width:88px;height:88px;border-radius:50%;overflow:hidden;margin:0 auto 8px;background:var(--gold);display:flex;align-items:center;justify-content:center;border:3px solid rgba(255,255,255,0.2);}
+.contact-mini-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
 .inspector-card h3{color:var(--white);font-size:20px;font-weight:700;margin-bottom:6px;}
 .inspector-card .inspector-title{color:var(--gold);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
 .inspector-card p{color:rgba(255,255,255,0.65);font-size:14px;line-height:1.7;}
@@ -363,13 +366,13 @@ body{padding-bottom:70px;}
     <div class="section-sub">Certified, experienced, and dedicated to giving you the most thorough inspection possible — every single time.</div>
     <div class="inspectors-grid">
       <div class="inspector-card">
-        <div class="inspector-avatar">C</div>
+        <div class="inspector-avatar"><img src="CT image.jpg" alt="Chintan"></div>
         <h3>Chintan</h3>
         <div class="inspector-title">InterNACHI Certified Inspector</div>
         <p>Bringing deep expertise in residential construction and building systems to every inspection. Thorough, detail-oriented, and always clear in communication.</p>
       </div>
       <div class="inspector-card">
-        <div class="inspector-avatar">N</div>
+        <div class="inspector-avatar"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='80' fill='%231E2A6E'/%3E%3Ccircle cx='80' cy='62' r='30' fill='%23FFD055'/%3E%3Cpath d='M40 140c8-24 22-36 40-36s32 12 40 36' fill='%23FFD055'/%3E%3Ccircle cx='70' cy='58' r='3' fill='white'/%3E%3Ccircle cx='90' cy='58' r='3' fill='white'/%3E%3Cpath d='M68 74c6 8 18 8 24 0' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Nirmit"></div>
         <h3>Nirmit</h3>
         <div class="inspector-title">InterNACHI Certified Inspector</div>
         <p>Committed to uncovering every issue so you can make informed decisions. Known for comprehensive assessments and easy-to-understand reports.</p>
@@ -517,12 +520,12 @@ body{padding-bottom:70px;}
           <p style="font-size:14px;color:var(--gray);margin-bottom:14px;font-weight:600;">YOUR INSPECTORS</p>
           <div style="display:flex;gap:12px;">
             <div style="background:var(--navy);border-radius:10px;padding:16px 20px;text-align:center;flex:1;">
-              <div style="width:44px;height:44px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy-dark);font-size:16px;margin:0 auto 8px;">C</div>
+              <div class="contact-mini-avatar"><img src="CT image.jpg" alt="Chintan"></div>
               <div style="color:var(--white);font-weight:600;font-size:14px;">Chintan</div>
               <div style="color:rgba(255,255,255,0.5);font-size:12px;">CPI Inspector</div>
             </div>
             <div style="background:var(--navy);border-radius:10px;padding:16px 20px;text-align:center;flex:1;">
-              <div style="width:44px;height:44px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy-dark);font-size:16px;margin:0 auto 8px;">N</div>
+              <div class="contact-mini-avatar"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='80' fill='%231E2A6E'/%3E%3Ccircle cx='80' cy='62' r='30' fill='%23FFD055'/%3E%3Cpath d='M40 140c8-24 22-36 40-36s32 12 40 36' fill='%23FFD055'/%3E%3Ccircle cx='70' cy='58' r='3' fill='white'/%3E%3Ccircle cx='90' cy='58' r='3' fill='white'/%3E%3Cpath d='M68 74c6 8 18 8 24 0' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Nirmit"></div>
               <div style="color:var(--white);font-weight:600;font-size:14px;">Nirmit</div>
               <div style="color:rgba(255,255,255,0.5);font-size:12px;">CPI Inspector</div>
             </div>

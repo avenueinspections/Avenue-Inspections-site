@@ -70,6 +70,12 @@ nav{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 20
 .form-group textarea{resize:vertical;min-height:100px;}
 .submit-btn{width:100%;background:var(--gold);color:var(--navy-dark);border:none;padding:13px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:background 0.2s;font-family:'Inter',sans-serif;}
 .submit-btn:hover{background:var(--gold-dark);}
+.submit-btn:disabled{opacity:0.6;cursor:wait;}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+.form-status{margin:12px 0 0 !important;font-size:14px !important;font-weight:600;min-height:1em;}
+.form-status.ok{color:#15803D !important;}
+.form-status.err{color:#B91C1C !important;}
+.form-group input.invalid,.form-group select.invalid{border-color:#B91C1C;}
 
 /* BADGES STRIP */
 .badges-strip{background:var(--navy-dark);padding:20px 24px;}
@@ -359,13 +365,13 @@ img{max-width:100%;}
         <div class="trust-item"><span class="trust-dot"></span> Calgary Based</div>
       </div>
     </div>
-    <div class="quote-card">
+    <form class="quote-card js-lead-form" data-form="Quote request" novalidate>
       <h3>Get a Free Quote</h3>
       <p>We typically respond within the hour.</p>
-      <div class="form-group"><label>Your Name</label><input type="text" autocomplete="name" placeholder="John Smith"></div>
-      <div class="form-group"><label>Phone Number</label><input type="tel" inputmode="tel" autocomplete="tel" placeholder="587-717-1771"></div>
-      <div class="form-group"><label>Service Needed</label>
-        <select>
+      <div class="form-group"><label for="q-name">Your Name</label><input id="q-name" name="name" type="text" required autocomplete="name" placeholder="John Smith"></div>
+      <div class="form-group"><label for="q-phone">Phone Number</label><input id="q-phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="587-717-1771"></div>
+      <div class="form-group"><label for="q-service">Service Needed</label>
+        <select id="q-service" name="service">
           <option value="">Select a service…</option>
           <option>Pre-Purchase Inspection</option>
           <option>Pre-Listing Inspection</option>
@@ -375,8 +381,10 @@ img{max-width:100%;}
           <option>Other</option>
         </select>
       </div>
-      <button class="submit-btn">Request Inspection →</button>
-    </div>
+      <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" class="submit-btn">Request Inspection →</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -619,7 +627,7 @@ img{max-width:100%;}
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉️</div>
-          <div><div class="contact-label">Email</div><a href="mailto:info@avenueinspections.ca" class="contact-val">info@avenueinspections.ca</a></div>
+          <div><div class="contact-label">Email</div><a href="mailto:info@avenueinspections.com" class="contact-val">info@avenueinspections.com</a></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
@@ -645,14 +653,14 @@ img{max-width:100%;}
           </div>
         </div>
       </div>
-      <div class="contact-form-card">
+      <form class="contact-form-card js-lead-form" data-form="Contact message" novalidate>
         <h3>Send Us a Message</h3>
-        <div class="form-group"><label>Full Name</label><input type="text" autocomplete="name" placeholder="John Smith"></div>
-        <div class="form-group"><label>Phone</label><input type="tel" inputmode="tel" autocomplete="tel" placeholder="587-717-1771"></div>
-        <div class="form-group"><label>Email</label><input type="email" autocomplete="email" placeholder="john@example.com"></div>
-        <div class="form-group"><label>Property Address</label><input type="text" autocomplete="street-address" placeholder="123 Main St SW, Calgary, AB"></div>
-        <div class="form-group"><label>Service Required</label>
-          <select>
+        <div class="form-group"><label for="c-name">Full Name</label><input id="c-name" name="name" type="text" required autocomplete="name" placeholder="John Smith"></div>
+        <div class="form-group"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="587-717-1771"></div>
+        <div class="form-group"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" placeholder="john@example.com"></div>
+        <div class="form-group"><label for="c-address">Property Address</label><input id="c-address" name="address" type="text" autocomplete="street-address" placeholder="123 Main St SW, Calgary, AB"></div>
+        <div class="form-group"><label for="c-service">Service Required</label>
+          <select id="c-service" name="service">
             <option value="">Select a service…</option>
             <option>Pre-Purchase Inspection</option>
             <option>Pre-Listing Inspection</option>
@@ -663,9 +671,11 @@ img{max-width:100%;}
             <option>Other</option>
           </select>
         </div>
-        <div class="form-group"><label>Message (optional)</label><textarea placeholder="Any additional details about the property or your needs…"></textarea></div>
-        <button class="submit-btn">Send Message →</button>
-      </div>
+        <div class="form-group"><label for="c-message">Message (optional)</label><textarea id="c-message" name="message" placeholder="Any additional details about the property or your needs…"></textarea></div>
+        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="submit-btn">Send Message →</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </section>
@@ -700,7 +710,7 @@ img{max-width:100%;}
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:+15877171771">587-717-1771</a></li>
-          <li><a href="mailto:info@avenueinspections.ca">info@avenueinspections.ca</a></li>
+          <li><a href="mailto:info@avenueinspections.com">info@avenueinspections.com</a></li>
           <li><a href="#contact">Get a Quote</a></li>
         </ul>
       </div>
@@ -733,6 +743,27 @@ function toggleFaq(el){
 document.querySelectorAll('.faq-q').forEach(function(q){
   q.setAttribute('role','button');q.setAttribute('tabindex','0');q.setAttribute('aria-expanded','false');
   q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleFaq(q);}});
+});
+document.querySelectorAll('.js-lead-form').forEach(function(form){
+  var btn=form.querySelector('.submit-btn'),status=form.querySelector('.form-status'),label=btn.textContent;
+  function say(msg,cls){status.textContent=msg;status.className='form-status '+(cls||'');}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=[];
+    form.querySelectorAll('[required]').forEach(function(f){var ok=f.value.trim()!=='';f.classList.toggle('invalid',!ok);if(!ok)bad.push(f);});
+    var em=form.querySelector('[type=email]');
+    if(em&&em.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim())){em.classList.add('invalid');bad.push(em);}
+    if(bad.length){say('Please fill in your name and phone number (and a valid email, if given).','err');bad[0].focus();return;}
+    var data={form:form.getAttribute('data-form')};
+    new FormData(form).forEach(function(v,k){data[k]=String(v).trim();});
+    btn.disabled=true;btn.textContent='Sending…';say('');
+    fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.json().catch(function(){return{};}).then(function(j){if(!r.ok)throw new Error(j.error||'Request failed');});})
+      .then(function(){form.reset();say('Thanks! We’ll be in touch shortly.','ok');})
+      .catch(function(){say('Sorry, something went wrong. Please call 587-717-1771.','err');})
+      .finally(function(){btn.disabled=false;btn.textContent=label;});
+  });
+  form.addEventListener('input',function(e){e.target.classList.remove('invalid');});
 });
 (function(){
   var nav=document.querySelector('nav'),btn=document.querySelector('.nav-toggle');

@@ -106,9 +106,11 @@ section{padding:80px 24px;}
 /* FINDINGS */
 .findings-section{background:var(--off-white);text-align:center;}
 .findings-section .section-sub{margin:0 auto;}
-.findings-carousel{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;margin:32px auto 0;}
+.findings-carousel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:32px auto 0;}
 .finding-slide{min-width:0;}
-.finding-photo-placeholder,.finding-slide img{width:100%;max-width:2in;height:auto;aspect-ratio:1;object-fit:cover;border:1.5px dashed var(--navy-light);border-radius:10px;background:var(--white);}
+.finding-photo-placeholder,.finding-slide img{width:100%;max-width:4in;height:auto;aspect-ratio:1;object-fit:cover;border:1.5px dashed var(--navy-light);border-radius:10px;background:var(--white);}
+.finding-slide img{object-fit:contain;}
+.finding-image-link{display:block;}
 .finding-photo-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px;color:var(--navy);font-size:14px;font-weight:700;}
 .finding-photo-placeholder span:last-child{color:var(--gray);font-size:11px;font-weight:500;}
 
@@ -232,6 +234,7 @@ nav.menu-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-4
   .about-grid,.contact-grid{gap:32px;}
   .tech-grid{gap:20px;}
   .why-grid,.services-grid{grid-template-columns:repeat(2,1fr);}
+  .findings-carousel{grid-template-columns:repeat(2,minmax(0,1fr));}
   .areas-grid{grid-template-columns:1fr 1fr;}
   .footer-grid{grid-template-columns:1fr 1fr;}
   .hero h1{font-size:38px;}
@@ -255,6 +258,7 @@ nav.menu-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-4
 @media(max-width:600px){
   section{padding:56px 16px;}
   .section-title{font-size:28px;}
+  .findings-carousel{grid-template-columns:1fr;}
   .section-title br{display:none;}
   .section-sub{font-size:15px;}
   .about-grid,.why-grid,.services-grid,.tech-grid,.areas-grid,.inspectors-grid,.contact-grid,.faq-list{margin-top:32px;}
@@ -420,22 +424,34 @@ img{max-width:100%;}
     <div class="findings-carousel" role="list" aria-label="Inspection findings photos">
       <!-- Replace each placeholder with an image, e.g. <img src="assets/findings/finding-1.jpg" alt="Description of finding">. -->
       <div class="finding-slide" role="listitem">
-        <div class="finding-photo-placeholder"><span>Finding 1</span><span>Add image</span></div>
+        <a class="finding-image-link" href="Improper.png" target="_blank" rel="noopener" aria-label="Open full-size image of improper wiring in breakers">
+          <img src="Improper.png" alt="Improper wiring in breakers">
+        </a>
       </div>
       <div class="finding-slide" role="listitem">
-        <div class="finding-photo-placeholder"><span>Finding 2</span><span>Add image</span></div>
+        <a class="finding-image-link" href="2.png" target="_blank" rel="noopener" aria-label="Open full-size image for finding 2">
+          <img src="2.png" alt="Finding 2">
+        </a>
       </div>
       <div class="finding-slide" role="listitem">
-        <div class="finding-photo-placeholder"><span>Finding 3</span><span>Add image</span></div>
+        <a class="finding-image-link" href="3.png" target="_blank" rel="noopener" aria-label="Open full-size image for finding 3">
+          <img src="3.png" alt="Finding 3">
+        </a>
       </div>
       <div class="finding-slide" role="listitem">
-        <div class="finding-photo-placeholder"><span>Finding 4</span><span>Add image</span></div>
+        <a class="finding-image-link" href="4.png" target="_blank" rel="noopener" aria-label="Open full-size image for finding 4">
+          <img src="4.png" alt="Finding 4">
+        </a>
       </div>
       <div class="finding-slide" role="listitem">
-        <div class="finding-photo-placeholder"><span>Finding 5</span><span>Add image</span></div>
+        <a class="finding-image-link" href="5.png" target="_blank" rel="noopener" aria-label="Open full-size image for finding 5">
+          <img src="5.png" alt="Finding 5">
+        </a>
       </div>
       <div class="finding-slide" role="listitem">
-        <div class="finding-photo-placeholder"><span>Finding 6</span><span>Add image</span></div>
+        <a class="finding-image-link" href="6.png" target="_blank" rel="noopener" aria-label="Open full-size image for finding 6">
+          <img src="6.png" alt="Finding 6">
+        </a>
       </div>
     </div>
   </div>
